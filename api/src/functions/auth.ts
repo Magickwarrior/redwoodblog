@@ -126,19 +126,20 @@ export const handler = async (
     // If this returns anything else, it will be returned by the
     // `signUp()` function in the form of: `{ message: 'String here' }`.
     handler: ({
-      username,
+      /* username,
       hashedPassword,
-      salt,
+      salt,  */ /*Uncomment to accept new signups */
       userAttributes: _userAttributes,
     }) => {
-      return db.user.create({
+      return false /*delete false, to accept new signups */
+      /*}  db.user.create({   Uncomment to accept new signups
         data: {
           email: username,
           hashedPassword: hashedPassword,
           salt: salt,
           // name: userAttributes.name
         },
-      })
+      })  */
     },
 
     // Include any format checks for password here. Return `true` if the
